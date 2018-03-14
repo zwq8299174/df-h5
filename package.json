@@ -14,6 +14,7 @@
     "inobounce": "^0.1.5",
     "moment": "^2.20.1",
     "vue": "^2.5.2",
+    "vue-awesome-swiper": "^3.1.3",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },

@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="renderer" content="webkit" />
-	<meta name="format-detection" content="telephone=no" />
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta content="yes" name="apple-touch-fullscreen">
-	<script>
-		//添加viewport-mate标签缩放网页。
-		!function(userAgent) {
-			if(userAgent.match(/AppleWebKit.*Mobile.*/)) {
-				var screen_w = parseInt(window.screen.width),
-					scale = screen_w / 750;
-				if(/Android (\d+\.\d+)/.test(userAgent)) {
-					var version = parseFloat(RegExp.$1);
-					if(userAgent.indexOf("MX") > -1 && version >= 5) {
-						//alert(userAgent)
-						document.write('<meta name="viewport" content="width=750,minimum-scale = ' + scale + ', maximum-scale = ' + scale + ', target-densitydpi=device-dpi">');
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta content="yes" name="apple-touch-fullscreen">
+		<script>
+			//添加viewport-mate标签缩放网页。
+			! function(userAgent) {
+				if(userAgent.match(/AppleWebKit.*Mobile.*/)) {
+					var screen_w = parseInt(window.screen.width),
+						scale = screen_w / 750;
+					if(/Android (\d+\.\d+)/.test(userAgent)) {
+						var version = parseFloat(RegExp.$1);
+						if(userAgent.indexOf("MX") > -1 && version >= 5) {
+							//alert(userAgent)
+							document.write('<meta name="viewport" content="width=750,minimum-scale = ' + scale + ', maximum-scale = ' + scale + ', target-densitydpi=device-dpi">');
+						} else {
+							document.write(version > 2.3 ? '<meta name="viewport" content="width=750, minimum-scale = ' + scale + ', maximum-scale = ' + scale + ', target-densitydpi=device-dpi">' : '<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+						};
 					} else {
-						document.write(version > 2.3 ? '<meta name="viewport" content="width=750, minimum-scale = ' + scale + ', maximum-scale = ' + scale + ', target-densitydpi=device-dpi">' : '<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
-					};
-				} else {
-					document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+						document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+					}
 				}
-			}
-		}(navigator.userAgent);
-	</script>
-    <title>df-h5</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+			}(navigator.userAgent);
+		</script>
+		<script type="text/javascript" src="./static/js/segment.min.js" ></script>
+		<script type="text/javascript" src="./static/js/ease.min.js" ></script>
+		<title>df-h5</title>
+	</head>
+	<body>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+	</body>
 </html>
