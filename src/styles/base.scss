@@ -1,0 +1,948 @@
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+
+html {
+	min-height: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+
+/* HTML5 媒体文件跟 img 保持一致 */
+
+audio,
+canvas,
+video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+
+body,
+button,
+input,
+select,
+textarea {
+	font: normal 20px/1.5 \5FAE\8F6F\96C5\9ED1, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, tahoma, arial, "Hiragino Sans GB", \5b8b\4f53, sans-serif;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+}
+
+input,
+select,
+textarea {
+	font-size: 100%;
+}
+
+
+/* 去掉各Table  cell 的边距并让其边重合 */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* IE bug fixed: th 不继承 text-align*/
+
+th {
+	text-align: inherit;
+}
+
+
+/* 去除默认边框 */
+
+fieldset,
+img {
+	border: 0;
+}
+
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+
+iframe {
+	display: block;
+}
+
+
+/* 去掉 firefox 下此元素的边框 */
+
+abbr,
+acronym {
+	border: 0;
+	font-variant: normal;
+}
+
+
+/* 一致的 del 样式 */
+
+del {
+	text-decoration: line-through;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+	font-style: normal;
+	font-weight: 500;
+}
+
+
+/* 去掉列表前的标识, li 会继承 */
+
+ol,
+ul {
+	list-style: none;
+}
+
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+
+caption,
+th {
+	text-align: left;
+}
+
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: 500;
+}
+
+q:before,
+q:after {
+	content: '';
+}
+
+
+/* 统一上标和下标 */
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+
+/* 正常链接 未访问 */
+
+a:link {
+	text-decoration: none;
+}
+
+
+/* 鼠标悬停 */
+
+a:hover {
+	text-decoration: none;
+}
+
+
+/* 默认不显示下划线，保持页面简洁 */
+
+ins,
+a {
+	text-decoration: none;
+}
+
+
+/* 代码字体 */
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, serif;
+	font-size: 1em;
+}
+
+
+/* 清理浮动 */
+
+.fn-clear:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: '';
+	clear: both;
+	height: 0;
+}
+
+.fn-clear {
+	zoom: 1;
+	/* for IE6 IE7 */
+}
+
+
+/* 隐藏, 通常用来与 JS 配合 */
+
+body .fn-hide {
+	display: none;
+}
+
+.fn-hide {
+	display: none;
+}
+
+.fn-show {
+	display: block !important;
+}
+
+
+/* 设置内联, 减少浮动带来的bug */
+
+.fn-left {
+	float: left;
+}
+
+.fn-right {
+	float: right;
+}
+
+
+/* 单行文字溢出时出现省略号，需设定宽度 */
+
+.fn-text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+/* 人民币符号 */
+
+.fn-rmb {
+	font-family: arial;
+	font-style: normal;
+	padding-right: 4px;
+}
+
+
+/* chrome 下字体过小的问题 */
+
+.fn-webkit-adjust {
+	-webkit-text-size-adjust: none;
+}
+
+
+/*----7*--2015.11.20-update----*/
+
+.fn-overflow {
+	overflow: hidden;
+}
+
+
+/* a链接去掉点击时候的虚线*/
+
+a,
+button,
+input {
+	text-decoration: none;
+	outline: none;
+	/*ff*/
+	hide-focus: expression(this.hideFocus=true);
+	/*ie*/
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+/*初始化系统默认样式*/
+
+i,
+em {
+	font-style: normal;
+}
+
+input,
+select,
+textarea {
+	vertical-align: middle;
+	-webkit-appearance: none;
+	border-radius: 0;
+	outline: none;
+	font-family: \5FAE\8F6F\96C5\9ED1, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, tahoma, arial, "Hiragino Sans GB", \5b8b\4f53, sans-serif;
+	color: #333;
+}
+
+*,
+*:after,
+*::before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+/* 清除浏览器默认行为 */
+
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+}
+
+a,
+button {
+	-webkit-user-select: none;
+}
+
+input[type=tel],
+input[type=number],
+input[type=password],
+input[type=date] {
+	font-family: tahoma, arial, "Hiragino Sans GB", \5b8b\4f53, sans-serif;
+}
+
+::-webkit-input-placeholder {
+	color: #999;
+	opacity: 1;
+}
+
+:-moz-placeholder {
+	color: #999;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	color: #999;
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	color: #999;
+	opacity: 1;
+}
+
+
+/*input[type="date"]:before {
+    content: attr(placeholder);
+    color:#c7c7c7;width: 100%;
+    text-align: center;
+}*/
+
+body {
+	color: #000;
+	margin: 0 auto;
+	overflow-x: hidden;
+	width: 750px;
+	min-height: 100%;
+}
+
+a {
+	color: #666;
+}
+
+
+/*----------------icon-font-----------------*/
+
+@font-face {
+	font-family: 'iconfont';  /* project id 590429 */
+  src: url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.eot');
+  src: url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.svg#iconfont') format('svg');
+}
+
+[class^='icon-'],
+[class*=' icon-'],
+.iconfont,
+.icon {
+	font-family: 'iconfont' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-stroke-width: 0.2px;
+}
+
+
+/*------often-used-------*/
+
+.w-100 {
+	width: 100%;
+}
+
+.fn-text-left {
+	text-align: left;
+}
+
+.fn-text-center {
+	text-align: center;
+}
+
+.fn-text-right {
+	text-align: right;
+}
+
+.fn-block {
+	display: block;
+}
+
+.red {
+	color: #bd0505;
+}
+
+.gray {
+	background-color: #f6f6f6;
+}
+
+.ml10 {
+	margin-left: 10px;
+}
+
+.mr20 {
+	margin-right: 20px;
+}
+
+.mr14 {
+	margin-right: 14px;
+}
+
+.fn-blur {
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.fn-fade-up {
+	-webkit-transform: translate3d(0, 50px, 0);
+	transform: translateY(50px);
+	opacity: 0;
+}
+
+.fn-fade-up.show {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translateY(0);
+	opacity: 1;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 0.5s;
+	-webkit-transition-timing-function: cubic-bezier(.25, .1, .25, 1);
+	transition-property: all;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(.25, .1, .25, 1);
+}
+
+.fn-delay-04 {
+	-webkit-transition-delay: 0.4s;
+	transition-delay: 0.4s;
+}
+
+.fn-delay-55 {
+	-webkit-transition-delay: 0.55s;
+	transition-delay: 0.55s;
+}
+
+body.gray {
+	background-color: #f6f6f6;
+}
+
+body.fix {
+	padding-bottom: 120px;
+	height: auto;
+}
+
+body.fix-default {
+	padding-bottom: 80px;
+	height: auto;
+}
+
+body.overflow {
+	overflow: hidden;
+}
+
+.main-container {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.radius-5 {
+	border-radius: 5px;
+}
+
+.show-round {
+	border-radius: 50%;
+}
+
+.ml-20 {
+	margin-left: 20px;
+}
+
+.transition-02 {
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.transition-05 {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.transition-1 {
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+
+/*------page-used-------*/
+
+
+/*header*/
+
+
+/*CSS3----loading动画*/
+
+.mask-shadow,
+.bg-shadow,
+.shadow,
+.alert-shadow {
+	background-color: #000;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1040;
+	opacity: 0.5;
+	transition: opacity 0.15s linear 0s;
+}
+
+.shadow {
+	background-color: #fff;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1040;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.mask-shadow.in,
+.bg-shadow.in,
+.shadow.in,
+.alert-shadow.in {
+	visibility: visible;
+	opacity: 0.5;
+}
+
+.page-tag {
+	color: #fff;
+	font-size: 20px;
+	position: fixed;
+	top: 100px;
+	width: 100%;
+	padding: 0 2em;
+	z-index: 2500;
+	text-align: center;
+}
+
+@-webkit-keyframes turn {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg)
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg)
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+
+@keyframes turn {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg)
+	}
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg)
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+
+@-webkit-keyframes load {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg)
+	}
+	30% {
+		-webkit-transform: rotate(270deg);
+		transform: rotate(270deg)
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+
+@keyframes load {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg)
+	}
+	30% {
+		-webkit-transform: rotate(270deg);
+		transform: rotate(270deg)
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+
+@keyframes thumbUp {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		transform: scale(3);
+		opacity: 0;
+		margin-top: -200px;
+	}
+}
+
+@-webkit-keyframes thumbUp {
+	from {
+		-webkit-transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		-webkit-transform: scale(3);
+		opacity: 0;
+		margin-top: -200px;
+	}
+}
+
+.loading {
+	margin: -48px 0 0 -48px;
+	width: 96px;
+	height: 96px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 9999;
+}
+
+.loading>div {
+	background-color: #34c0e2;
+	display: inline-block;
+	border-radius: 100%;
+	height: 30px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 30px;
+}
+
+.loading>div:nth-child(1) {
+	-webkit-animation: ballOne 2s 0s ease-in-out infinite;
+	-moz-animation: ballOne 2s 0s ease-in-out infinite;
+	-o-animation: ballOne 2s 0s ease-in-out infinite;
+	animation: ballOne 2s 0s ease-in-out infinite;
+}
+
+.loading>div:nth-child(2) {
+	-webkit-animation: ballTwo 2s 0s ease-in-out infinite;
+	-moz-animation: ballTwo 2s 0s ease-in-out infinite;
+	-o-animation: ballTwo 2s 0s ease-in-out infinite;
+	animation: ballTwo 2s 0s ease-in-out infinite;
+}
+
+.loading>div:nth-child(3) {
+	-webkit-animation: ballTree 2s 0s ease-in-out infinite;
+	-moz-animation: ballTree 2s 0s ease-in-out infinite;
+	-o-animation: ballTree 2s 0s ease-in-out infinite;
+	animation: ballTree 2s 0s ease-in-out infinite;
+}
+
+@keyframes ballOne {
+	0% {
+		transform: translate(0px, 220%);
+	}
+	17% {
+		opacity: 0.25;
+	}
+	33% {
+		opacity: 1;
+		transform: translate(110%, 0px);
+	}
+	50% {
+		opacity: 0.25;
+	}
+	66% {
+		opacity: 1;
+		transform: translate(220%, 220%);
+	}
+	83% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0px, 220%);
+	}
+}
+
+@-webkit-keyframes ballOne {
+	0% {
+		-webkit-transform: translate(0, 220%);
+		transform: translate(0, 220%);
+	}
+	17% {
+		opacity: .25;
+	}
+	33% {
+		opacity: 1;
+		-webkit-transform: translate(110%, 0);
+		transform: translate(110%, 0);
+	}
+	50% {
+		opacity: .25;
+	}
+	66% {
+		opacity: 1;
+		-webkit-transform: translate(220%, 220%);
+		transform: translate(220%, 220%);
+	}
+	83% {
+		opacity: .25;
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(0, 220%);
+		transform: translate(0, 220%);
+	}
+}
+
+@keyframes ballTwo {
+	0% {
+		transform: translate(110%, 0px);
+	}
+	17% {
+		opacity: 0.25;
+	}
+	33% {
+		opacity: 1;
+		transform: translate(220%, 220%);
+	}
+	50% {
+		opacity: 0.25;
+	}
+	66% {
+		opacity: 1;
+		transform: translate(0px, 220%);
+	}
+	83% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 1;
+		transform: translate(110%, 0px);
+	}
+}
+
+@-webkit-keyframes ballTwo {
+	0% {
+		-webkit-transform: translate(110%, 0px);
+		transform: translate(110%, 0px);
+	}
+	17% {
+		opacity: 0.25;
+	}
+	33% {
+		opacity: 1;
+		-webkit-transform: translate(220%, 220%);
+		transform: translate(220%, 220%);
+	}
+	50% {
+		opacity: 0.25;
+	}
+	66% {
+		opacity: 1;
+		-webkit-transform: translate(0px, 220%);
+		transform: translate(0px, 220%);
+	}
+	83% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(110%, 0px);
+		transform: translate(110%, 0px);
+	}
+}
+
+@keyframes ballTree {
+	0% {
+		transform: translate(220%, 220%);
+	}
+	17% {
+		opacity: 0.25;
+	}
+	33% {
+		opacity: 1;
+		transform: translate(0px, 220%);
+	}
+	50% {
+		opacity: 0.25;
+	}
+	66% {
+		opacity: 1;
+		transform: translate(110%, 0px);
+	}
+	83% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 1;
+		transform: translate(220%, 220%);
+	}
+}
+
+@-webkit-keyframes ballTree {
+	0% {
+		-webkit-transform: translate(220%, 220%);
+		transform: translate(220%, 220%);
+	}
+	17% {
+		opacity: 0.25;
+	}
+	33% {
+		opacity: 1;
+		-webkit-transform: translate(0px, 220%);
+		transform: translate(0px, 220%);
+	}
+	50% {
+		opacity: 0.25;
+	}
+	66% {
+		opacity: 1;
+		-webkit-transform: translate(110%, 0px);
+		transform: translate(110%, 0px);
+	}
+	83% {
+		opacity: 0.25;
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translate(220%, 220%);
+		transform: translate(220%, 220%);
+	}
+}
