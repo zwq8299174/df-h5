@@ -1,7 +1,18 @@
 @import "./base";
 
-$color-primary   : #ff9055;
+$color-primary   : #ff8240;
 
+.swiper-pagination-bullet-active{background:$color-primary;}
 
+//button
+.btn-wrapper{display: inline-block;
+    .btn{
+        display: flex;height: 50px;justify-content: center;align-items: center;border-radius:25px;border:none;background-color: #fff;font-size: 24px;width: 220px;
+        .btn-primary{background-color:$color-primary;color:#fff;}
+        .outline{border:1px solid $color-primary; color:$color-primary;}
+    }
+}
+
+.main-banner{height: 570px;background-color: #fff;}
 
 

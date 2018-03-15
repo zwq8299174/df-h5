@@ -9,35 +9,92 @@
 					<path id="pathF" d="M 700 650 L 300 650 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
 				</svg>
 				<button id="menu-icon-trigger" class="menu-icon-trigger"></button>
-			</div><!-- menu-icon-wrapper -->
+			</div>
+			<!-- menu-icon-wrapper -->
 		</header>
-		<nav class="nav-list">
-			<a class="nav-item ">首页</a>
-			<a class="nav-item">400套餐</a>
-			<a class="nav-item">客户案例</a>
-			<a class="nav-item">了解400</a>
-			<a class="nav-item active">关于我们</a>
-			<a class="nav-item">帮助中心</a>
-			<a class="nav-item">其他咨询</a>
-		</nav>
+		<div class="nav-wrapper">
+			<nav class="nav-list">
+				<a class="nav-item ">首页</a>
+				<a class="nav-item">400套餐</a>
+				<a class="nav-item">客户案例</a>
+				<a class="nav-item">了解400</a>
+				<a class="nav-item active">关于我们</a>
+				<a class="nav-item">帮助中心</a>
+				<a class="nav-item">其他咨询</a>
+			</nav>
+		</div>
+		<swiper class="main-banner" :options="swiperOption">
+			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
+			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
+			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
+			<div class="swiper-pagination" slot="pagination"></div>
+		</swiper>
+		<div class="hot-combo">
+			<h2>推荐套餐</h2>
+			<div class="combo-card">
+				<h3>特推套餐</h3>
+				<p>每天不到</p>
+				<div class="price">
+					<i>3</i>
+					<em>元</em>
+				</div>
+				<div class="btn-wrapper">
+					<button class="btn btn-primary">咨询办理</button>
+				</div>
+				<span class="tag">限时免费</span>
+			</div>
+			<div class="detail">
+				<h3 class="title">剩余时间</h3>
+				<div class="countdown-wrapper">
+					
+				</div>
+				<h3 class="title">超值福利</h3>
+				<div class="weal-wrapper">
+					<div class="weal-item">
+						<i class="icon">&#xe65d;</i>
+						<span>送双倍话费</span>
+					</div>
+					<div class="weal-item">
+						<i class="icon">&#xe65d;</i>
+						<span>14项400功能礼包</span>
+					</div>
+					<div class="weal-item">
+						<i class="icon">&#xe65d;</i>
+						<span>立得限量购物卡</span>
+					</div>
+				</div>
+				<h3 class="title">400电话</h3>
+				<div class="wrapper-400">
+					<a class="item-400">400-800-6107</a>
+					<a class="item-400">400-800-6107</a>
+					<a class="item-400">400-800-6107</a>
+					<a class="item-400">400-800-6107</a>
+					<a class="item-400">400-800-6107</a>
+					<a class="item-400 link">更多号码</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script>
-	
 	export default {
 		name: 'indexPage',
 		data() {
 			return {
-				msg: 'Welcome to Your Vue.js App'
+				swiperOption: {
+					pagination: {
+						el: '.swiper-pagination'
+					}
+				}
 			}
 		},
-		mounted(){
+		mounted() {
 			console.log(12312);
 			require('../../static/js/main.js')
 		},
-		methods:{
-			
+		methods: {
+
 		}
 	}
 </script>
@@ -46,109 +103,53 @@
 	@import "../styles/index";
 	/* Menu icon styles */
 	
-	.menu-icon-wrapper {
-		position: relative;
-		display: inline-block;
-		width: 42px;
-		height: 42px;
-		margin-right: 28px;
-		pointer-events: none;
-		transition: 0.1s;
+	.dummy__item {
+		-webkit-transition: -webkit-transform 0.5s;
+		transition: transform 0.5s;
+		-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+		transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 	}
 	
-	.menu-icon-wrapper.scaled {
-		-webkit-transform: scale(0.5);
-		-ms-transform: scale(0.5);
-		transform: scale(0.5);
+	.device--alt .dummy__item {
+		-webkit-transform: translate3d(-100%, 0, 0) translate3d(-2em, 0, 0) scale3d(0.5, 1, 1);
+		transform: translate3d(-100%, 0, 0) translate3d(-2em, 0, 0) scale3d(0.5, 1, 1);
+		-webkit-transform-origin: 100% 50%;
+		transform-origin: 100% 50%;
 	}
 	
-	.menu-icon-wrapper svg {
-		position: absolute;
-		top: -33px;
-		left: -33px;
-		-webkit-transform: scale(0.1);
-		-ms-transform: scale(0.1);
-		transform: scale(0.1);
-		-webkit-transform-origin: 0 0;
-		-ms-transform-origin: 0 0;
-		transform-origin: 0 0;
+	.dummy__item {
+		-webkit-transform: translate3d(0, 100%, 0) scale3d(1, 0.2, 1);
+		transform: translate3d(0, 100%, 0) scale3d(1, 0.2, 1);
 	}
 	
-	.menu-icon-wrapper svg path {
-		stroke: #666;
-		stroke-width: 60px;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		fill: transparent;
+	.dummy--active .dummy__item {
+		-webkit-transition-timing-function: cubic-bezier(0.56, 1.19, 0.2, 1.05);
+		transition-timing-function: cubic-bezier(0.56, 1.19, 0.2, 1.05);
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
 	}
 	
-	.menu-icon-wrapper .menu-icon-trigger {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		cursor: pointer;
-		pointer-events: auto;
-		background: none;
-		border: none;
-		margin: 0;
-		padding: 0;
+	.dummy__item:nth-child(4),
+	.show .dummy__item:first-child {
+		-webkit-transition-delay: 0.05s;
+		transition-delay: 0.05s;
 	}
 	
-	.menu-icon-wrapper .menu-icon-trigger:hover,
-	.menu-icon-wrapper .menu-icon-trigger:focus {
-		outline: none;
+	.dummy__item:nth-child(3),
+	.show .dummy__item:nth-child(2) {
+		-webkit-transition-delay: 0.1s;
+		transition-delay: 0.1s;
 	}
 	
+	.dummy__item:nth-child(2),
+	.show .dummy__item:nth-child(3) {
+		-webkit-transition-delay: 0.15s;
+		transition-delay: 0.15s;
+	}
 	
-	
-	
-.dummy__item {
-	-webkit-transition: -webkit-transform 0.5s;
-	transition: transform 0.5s;
-	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-	transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-}
-
-.device--alt .dummy__item {
-	-webkit-transform: translate3d(-100%, 0, 0) translate3d(-2em, 0, 0) scale3d(0.5, 1, 1);
-	transform: translate3d(-100%, 0, 0) translate3d(-2em, 0, 0) scale3d(0.5, 1, 1);
-	-webkit-transform-origin: 100% 50%;
-	transform-origin: 100% 50%;
-}
-
-.dummy__item {
-	-webkit-transform: translate3d(0, 100%, 0) scale3d(1, 0.2, 1);
-	transform: translate3d(0, 100%, 0) scale3d(1, 0.2, 1);
-}
-
-.dummy--active .dummy__item {
-	-webkit-transition-timing-function: cubic-bezier(0.56, 1.19, 0.2, 1.05);
-	transition-timing-function: cubic-bezier(0.56, 1.19, 0.2, 1.05);
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-
-.dummy__item:nth-child(4),
-.show .dummy__item:first-child {
-	-webkit-transition-delay: 0.05s;
-	transition-delay: 0.05s;
-}
-
-.dummy__item:nth-child(3),
-.show .dummy__item:nth-child(2) {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
-}
-
-.dummy__item:nth-child(2),
-.show .dummy__item:nth-child(3) {
-	-webkit-transition-delay: 0.15s;
-	transition-delay: 0.15s;
-}
-
-.dummy__item:first-child,
-.show .dummy__item:nth-child(4) {
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s;
-}
+	.dummy__item:first-child,
+	.show .dummy__item:nth-child(4) {
+		-webkit-transition-delay: 0.2s;
+		transition-delay: 0.2s;
+	}
 </style>

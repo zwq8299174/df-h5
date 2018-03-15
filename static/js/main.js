@@ -88,7 +88,7 @@
 		wrapper = document.getElementById('menu-icon-wrapper'),
 		trigger = document.getElementById('menu-icon-trigger'),
 		toCloseIcon = true,
-		nav = document.querySelector('.nav-list'),
+		nav = document.querySelector('.nav-wrapper'),
 		header = document.querySelector('.main-nav');
 
 	wrapper.style.visibility = 'visible';
@@ -103,7 +103,7 @@
 			
 			nav.style.display = 'flex';
 			setTimeout(function(){
-				nav.className = 'nav-list show';
+				nav.className = 'nav-wrapper show';
 			},0);
 			header.className = 'main-nav open';
 		} else {
@@ -111,7 +111,10 @@
 			outB(segmentE);
 			outAC(segmentF);
 
-			nav.className = 'nav-list';
+			nav.className = 'nav-wrapper white';
+			setTimeout(function(){
+				nav.className = 'nav-wrapper';
+			},500);
 			setTimeout(function(){
 				nav.style.display = 'none';
 			},700);
