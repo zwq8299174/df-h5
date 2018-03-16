@@ -12,7 +12,7 @@
 			</div>
 			<!-- menu-icon-wrapper -->
 		</header>
-		<div class="nav-wrapper">
+		<section class="nav-wrapper">
 			<nav class="nav-list">
 				<a class="nav-item ">首页</a>
 				<a class="nav-item">400套餐</a>
@@ -22,14 +22,14 @@
 				<a class="nav-item">帮助中心</a>
 				<a class="nav-item">其他咨询</a>
 			</nav>
-		</div>
+		</section>
 		<swiper class="main-banner" :options="swiperOption">
 			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
 			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
 			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
 			<div class="swiper-pagination" slot="pagination"></div>
 		</swiper>
-		<div class="hot-combo">
+		<section class="hot-combo block">
 			<h2>推荐套餐</h2>
 			<div class="combo-card">
 				<h3>特推套餐</h3>
@@ -39,7 +39,7 @@
 					<em>元</em>
 				</div>
 				<div class="btn-wrapper">
-					<button class="btn btn-primary">咨询办理</button>
+					<a class="btn btn-light">咨询办理</a>
 				</div>
 				<span class="tag">限时免费</span>
 			</div>
@@ -73,6 +73,142 @@
 					<a class="item-400 link">更多号码</a>
 				</div>
 			</div>
+		</section>
+		<section class="advantage block">
+			<h2>我们的优势</h2>
+			<div class="item">
+				<i class="icon">&#xe64a;</i>
+				<h4>10万家</h4>
+				<p>客户好评，多年品质如一</p>
+			</div>
+			<div class="item">
+				<i class="icon">&#xe646;</i>
+				<h4>一级授权资质</h4>
+				<p>移动、联通、电信一级授权</p>
+			</div>
+			<div class="item">
+				<i class="icon">&#xe64b;</i>
+				<h4>600万</h4>
+				<p>号码资源</p>
+			</div>
+			<div class="item">
+				<i class="icon">&#xe644;</i>
+				<h4>7*24小时</h4>
+				<p>售后服务</p>
+			</div>
+			<div class="btn-wrapper">
+				<a class="btn btn-outline">查看详情</a>
+			</div>
+		</section>
+		<section class="cooperation block">
+			<h2>企业信赖的合作伙伴</h2>
+			<h4>累计超过 <i class="color-primary bold">100万</i> 家商户使用了 <i class="color-primary bold">400电话服务</i></h4>
+			<div class="company-wrapper"></div>
+			<div class="btn-wrapper">
+				<a class="btn btn-outline">更多客户案例</a>
+			</div>
+		</section>
+		<section class="introduce block">
+			<h2>400功能介绍</h2>
+			<h4>实际需求定制、附赠功能、高效搭建</h4>
+			<p>根据企业实际需求定制，您所想到的功能，均能支持.</p>
+			<p>附赠的语音菜单、排队等待、智能报号评价等无数功能，</p>
+			<p>致力帮助企业快速高效的搭建完整400体系以及客户管理系统.</p>
+			<div class="btn-wrapper">
+				<a class="btn btn-light">功能详情</a>
+			</div>
+		</section>
+		<section class="combo block">
+			<h2>400精选号码套餐</h2>
+			<div class="combo-wrapper">
+				<div class="combo-card small">
+					<div class="card-header">热销版</div>
+					<div class="card-content">
+						<h3>4</h3>
+						<p class="desc">元/月</p>
+						<div class="countdown-wrapper">
+							
+						</div>
+						<div class="intro">
+							折合4元每天；无任何增收费用、一次投入、长期使用；双倍话费赠送
+						</div>
+						<div class="btn-wrapper">
+							<a class="btn btn-outline">功能详情</a>
+						</div>
+					</div>
+					<span class="tag">限时套餐</span>
+				</div>
+				<div class="combo-card small">
+					<div class="card-header">热销版</div>
+					<div class="card-content">
+						<h3>4</h3>
+						<p class="desc">元/月</p>
+						<div class="countdown-wrapper">
+							
+						</div>
+						<div class="intro">
+							折合4元每天；无任何增收费用、一次投入、长期使用；双倍话费赠送
+						</div>
+						<div class="btn-wrapper">
+							<a class="btn btn-outline">功能详情</a>
+						</div>
+					</div>
+					<span class="tag">限时套餐</span>
+				</div>
+				<div class="combo-card active">
+					<div class="card-header">热销版</div>
+					<div class="card-content">
+						<h3>4</h3>
+						<p class="desc">元/月</p>
+						<div class="countdown-wrapper">
+							
+						</div>
+						<div class="intro">
+							折合4元每天；无任何增收费用、一次投入、长期使用；双倍话费赠送
+						</div>
+						<div class="btn-wrapper">
+							<a class="btn btn-primary">功能详情</a>
+						</div>
+					</div>
+					<span class="tag">限时套餐</span>
+				</div>
+			</div>
+			<div class="btn-wrapper">
+				<a class="btn btn-outline">功能详情</a>
+			</div>
+		</section>
+		<section class="contact block">
+			<h2>联系我们</h2>
+			<div class="item">
+				<i class="icon">&#xe637;</i>
+				<h4>售前热线</h4>
+				<div class="btn-wrapper">
+					<a class="btn btn-outline">400-699-0555</a>
+				</div>
+			</div>
+			<div class="item">
+				<i class="icon">&#xe638;</i>
+				<h4>售后热线</h4>
+				<div class="btn-wrapper">
+					<a class="btn btn-outline">400-698-7983</a>
+				</div>
+			</div>
+			<div class="item">
+				<i class="icon">&#xe640;</i>
+				<h4>渠道热线</h4>
+				<div class="btn-wrapper">
+					<a class="btn btn-outline">400-103-7000</a>
+				</div>
+			</div>
+		</section>
+		<footer>
+			
+		</footer>
+		<div class="toolbar">
+			<a class="service">
+				<i></i>
+			</a>
+			<a class="consult"></a>
 		</div>
 	</div>
 </template>

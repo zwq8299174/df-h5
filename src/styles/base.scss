@@ -1,3 +1,21 @@
+
+$color-primary   : #ff8240;
+
+
+
+$font-size       :24px;
+$font-color      :#666;
+
+
+
+
+.color-primary{color: $color-primary;}
+.bold{font-weight:bold;}
+
+
+
+
+
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 
 html {
@@ -90,7 +108,9 @@ button,
 input,
 select,
 textarea {
-	font: normal 20px/1.5 \5FAE\8F6F\96C5\9ED1, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, tahoma, arial, "Hiragino Sans GB", \5b8b\4f53, sans-serif;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color:#666;
+	font: normal $font-size/1.5 \5FAE\8F6F\96C5\9ED1, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, tahoma, arial, "Hiragino Sans GB", \5b8b\4f53, sans-serif;-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color:$font-color;
 }
 
 input,
