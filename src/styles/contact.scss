@@ -1,0 +1,41 @@
+@import "./app";
+
+
+.banner{
+    height: 948px;width: 100%;
+}
+h1.title{text-align: center;line-height: 160px;color: #333;font-size: 48px;}
+.content{
+    text-align: left;line-height: 48px;padding:0 35px;word-break:break-all;
+}
+
+.advantage{background-color: #fff;margin-top: 30px;display: flex;flex-wrap:wrap;justify-content: center;padding:20px;
+    h2{margin:10px 0;font-size: 48px;color: #464646;line-height: 130px;width: 100%;}
+    .item{
+        flex-basis: 100%;display: flex;justify-content: center;flex-wrap: wrap;
+        i{//0.68
+            font-size:200px;line-height: 1;color:$color-primary;
+        }
+        h4{width: 100%;line-height: 48px;font-size: 28px;color:$color-primary;}
+        p{width: 100%;line-height: 38px;font-size: 18px;}
+    }
+}
+
+
+.license{display: flex;justify-content: center;flex-wrap: wrap;padding-top: 54px;
+    h2{color:#333;font-size: 48px;line-height:78px;width: 100%;}
+    p{line-height: 60px;font-size: 28px;color:#333;width: 100%;}
+    .item{padding-top: 28px;width: 100%;
+        p{line-height: 84px;font-size: 24px;color:#333;width: 100%;}
+    }
+}
+
+.contact{background-color: #fff;padding-bottom: 50px;padding-top: 20px;
+    h2{font-size: 48px;color: #464646;line-height: 130px;width: 100%;}
+    .item{
+        width: 100%;display: flex;justify-content: center;flex-wrap: wrap;
+        .icon{font-size:150px;color: $color-primary;line-height: 1;}
+        h4{width: 100%;font-size:28px;color: #333;line-height:60px;margin-bottom: 20px;}
+        .btn{width: 240px;margin:0 0 20px 0;}
+    }
+}
