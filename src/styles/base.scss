@@ -108,7 +108,7 @@ button,
 input,
 select,
 textarea {
-	font: normal $font-size/1.5 \5FAE\8F6F\96C5\9ED1, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, tahoma, arial, "Hiragino Sans GB", \5b8b\4f53, sans-serif;-webkit-font-smoothing: antialiased;
+	font-style: normal; font-size:$font-size;font-family:\5FAE\8F6F\96C5\9ED1, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, tahoma, arial, "Hiragino Sans GB", \5b8b\4f53, sans-serif;-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color:$font-color;
 }
@@ -590,26 +590,14 @@ body.overflow {
 }
 
 .transition-02 {
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
 .transition-05 {
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	-ms-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 }
 
 .transition-1 {
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	-ms-transition: all 1s ease;
 	transition: all 1s ease;
 }
 

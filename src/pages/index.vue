@@ -202,13 +202,40 @@
 			</div>
 		</section>
 		<footer>
-			
+			<div class="item">
+				<p class="title">业务</p>
+				<p><a>了解400</a></p>
+				<p><a>套餐介绍</a></p>
+			</div>
+			<div class="item">
+				<p class="title">公司</p>
+				<p><a>关于我们</a></p>
+				<p><a>客户案例</a></p>
+			</div>
+			<div class="item">
+				<p class="title">帮助</p>
+				<p><a>帮助中心</a></p>
+				<p><a>其他咨询</a></p>
+			</div>
+			<div class="item full">
+				<p class="title">友链</p>
+				<p class="list"><a>郑州400</a><a>郑州400</a><a>郑州400</a><a>郑州400</a><a>郑州400</a><a>郑州400</a></p>
+			</div>
+			<div class="item full copyright">
+				<p>大府信息 版权所有 严禁复制 2000-2016        
+				<p>上海市长宁区茅台路1068号天祥大厦501-507</p>  
+				<p>备案号：沪IC备11032290-3</p>
+			</div>
 		</footer>
-		<div class="toolbar">
+		<div class="toolbar fn-clear">
 			<a class="service">
-				<i></i>
+				<i class="icon">&#xe644;</i>
+				客服
 			</a>
-			<a class="consult"></a>
+			<a class="consult">
+				<i class="icon">&#xe64c;</i>
+				咨询业务
+			</a>
 		</div>
 	</div>
 </template>
@@ -237,55 +264,4 @@
 
 <style lang="scss">
 	@import "../styles/index";
-	/* Menu icon styles */
-	
-	.dummy__item {
-		-webkit-transition: -webkit-transform 0.5s;
-		transition: transform 0.5s;
-		-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-		transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-	}
-	
-	.device--alt .dummy__item {
-		-webkit-transform: translate3d(-100%, 0, 0) translate3d(-2em, 0, 0) scale3d(0.5, 1, 1);
-		transform: translate3d(-100%, 0, 0) translate3d(-2em, 0, 0) scale3d(0.5, 1, 1);
-		-webkit-transform-origin: 100% 50%;
-		transform-origin: 100% 50%;
-	}
-	
-	.dummy__item {
-		-webkit-transform: translate3d(0, 100%, 0) scale3d(1, 0.2, 1);
-		transform: translate3d(0, 100%, 0) scale3d(1, 0.2, 1);
-	}
-	
-	.dummy--active .dummy__item {
-		-webkit-transition-timing-function: cubic-bezier(0.56, 1.19, 0.2, 1.05);
-		transition-timing-function: cubic-bezier(0.56, 1.19, 0.2, 1.05);
-		-webkit-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-	}
-	
-	.dummy__item:nth-child(4),
-	.show .dummy__item:first-child {
-		-webkit-transition-delay: 0.05s;
-		transition-delay: 0.05s;
-	}
-	
-	.dummy__item:nth-child(3),
-	.show .dummy__item:nth-child(2) {
-		-webkit-transition-delay: 0.1s;
-		transition-delay: 0.1s;
-	}
-	
-	.dummy__item:nth-child(2),
-	.show .dummy__item:nth-child(3) {
-		-webkit-transition-delay: 0.15s;
-		transition-delay: 0.15s;
-	}
-	
-	.dummy__item:first-child,
-	.show .dummy__item:nth-child(4) {
-		-webkit-transition-delay: 0.2s;
-		transition-delay: 0.2s;
-	}
 </style>

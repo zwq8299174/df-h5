@@ -1,0 +1,28 @@
+@import "./app";
+
+.banner{
+    height: 330px;width: 100%;background: url(../assets/img/cooperation-banner.jpg) no-repeat top center;display: flex;justify-content: center;flex-wrap: wrap;flex-direction:column;
+    h2{font-size: 60px;color:#fff;line-height: 92px;width: 100%;}
+}
+.title{text-align: center;line-height: 170px;color: #333;font-size: 48px;}
+
+.merchant{
+    .head{line-height: 60px;height:62px;border-bottom: 1px solid #ddd;border-top: 1px solid #ddd;font-size: 24px;padding-left: 40px;text-align: left;background-color: #fff;}
+    .class-list{background-color: #fff;display: flex;padding: 40px 0;flex-wrap: wrap;padding:0 40px;
+        a{flex-basis:102px;height:50px;line-height: 50px;text-align: center;color:#999;margin:20px 40px 20px 0;@extend .transition-02;
+            &:nth-child(5n){margin-right: 0;}
+            &.active{background-color: $color-primary;border-radius:25px;color:#fff;}
+        }
+        
+    }
+    .merchant-list{display: flex;padding:40px;justify-content: space-between;flex-wrap: wrap;color:#333;
+        .item{flex-basis: calc(50% - 15px);display: flex;justify-content: center;flex-wrap:wrap ;
+            .img{background-color: #fff;width: 100%;height:242px;border: 1px solid #ddd;display: flex;justify-content: center;align-items: center;
+                
+            }
+            h4{line-height: 34px;font-size: 24px;margin-top: 10px;width: 100%;}
+            p{line-height: 26px;font-size: 18px;width: 100%;}
+            .btn{margin: 25px 0;width:182px;line-height: 40px;height: 40px;font-size: 18px;}
+        }
+    }
+}
