@@ -22,7 +22,7 @@
 							document.write(version > 2.3 ? '<meta name="viewport" content="width=750, minimum-scale = ' + scale + ', maximum-scale = ' + scale + ', target-densitydpi=device-dpi">' : '<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
 						};
 					} else {
-						document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+						document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi, viewport-fit=cover">');
 					}
 				}
 			}(navigator.userAgent);
@@ -31,7 +31,7 @@
 		<script type="text/javascript" src="./static/js/ease.min.js" ></script>
 		<title>df-h5</title>
 	</head>
-	<body>
+	<body ontouchstart="">
 		<div id="app"></div>
 		<!-- built files will be auto injected -->
 	</body>

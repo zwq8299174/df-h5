@@ -1,0 +1,31 @@
+@import "./variable";
+
+
+.banner{
+    height: 330px;width: 100%;
+}
+
+
+.flow{height: 1164px;width: 100%;background: url(../assets/img/help-bg.png) center 55% no-repeat #fff;
+    h2{margin:10px 0;font-size: 48px;color: #464646;line-height: 130px;height: 130px;width: 100%;}
+    .item{
+        flex-basis: 100%;display: flex;justify-content: center;flex-wrap: wrap;margin-bottom:60px;
+        i{//0.68
+            font-size:200px;line-height: 1;color:$color-primary;
+        }
+        h4{width: 100%;line-height:48px;font-size: 28px;}
+    }
+    .btn{width: 400px;}
+}
+
+
+.help-center{padding:0 40px;
+    h2{font-size: 48px;color: #333;line-height: 160px;width: 100%; margin-top:16px;}
+    h3{font-size: 48px;color: #333;line-height: 110px;width: 100%;}
+    .item{padding-left:115px;width: 100%;text-align: left;margin-bottom: 50px;
+        h4{font-size: 36px;color: #333;line-height:90px;width: 100%;}
+        p{line-height:58px;width: 100%;}
+        a{font-size:28px;color:$color-link;}
+    }
+    .btn{width: 400px;margin:40px 0;}
+}

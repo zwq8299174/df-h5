@@ -1,0 +1,9 @@
+@import "./variable";
+
+.toolbar{position: fixed;height:100px;line-height: 100px; width: 100%;bottom: 0;font-size: 30px;
+    a{float: left;display: flex;justify-content: center;align-items: center; 
+        &.service{width:210px;background-color: #eaeaea;}
+        &.consult{width:540px;background-color: $color-primary;color: #fff;}
+    }
+    i{font-size:76px;line-height: 100px;margin-right: 20px;}
+}

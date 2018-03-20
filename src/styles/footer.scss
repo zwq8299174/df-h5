@@ -1,0 +1,17 @@
+@import "./variable";
+
+footer{background-color: #575757;font-size: 16px;padding:34px 20px;
+    display: flex;flex-wrap:wrap;justify-content: flex-start;text-align-last: left;
+    .item{flex-basis:50%;padding-left:150px;margin-bottom: 25px;
+        .title{font-size:24px;line-height: 56px;color:#fff;}
+        a{line-height: 32px;color:#fff;}
+        &.full{flex-basis:100%;
+            .list{display: flex;flex-wrap: wrap;
+                a{flex-basis: 33.33%;}
+            }
+        }
+        &.copyright{
+            font-size:14px;color: #999;
+        }
+    }
+}

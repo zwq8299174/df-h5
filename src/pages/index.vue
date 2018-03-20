@@ -1,28 +1,5 @@
 <template>
 	<div>
-		<header class="main-nav">
-			<div class="logo"></div>
-			<div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: hidden">
-				<svg width="1000px" height="1000px">
-					<path id="pathD" d="M 300 350 L 700 350 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
-					<path id="pathE" d="M 300 500 L 700 500"></path>
-					<path id="pathF" d="M 700 650 L 300 650 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
-				</svg>
-				<button id="menu-icon-trigger" class="menu-icon-trigger"></button>
-			</div>
-			<!-- menu-icon-wrapper -->
-		</header>
-		<section class="nav-wrapper">
-			<nav class="nav-list">
-				<a class="nav-item ">首页</a>
-				<a class="nav-item">400套餐</a>
-				<a class="nav-item">客户案例</a>
-				<a class="nav-item">了解400</a>
-				<a class="nav-item active">关于我们</a>
-				<a class="nav-item">帮助中心</a>
-				<a class="nav-item">其他咨询</a>
-			</nav>
-		</section>
 		<swiper class="main-banner" :options="swiperOption">
 			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
 			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
@@ -39,7 +16,7 @@
 					<em>元</em>
 				</div>
 				<div class="btn-wrapper">
-					<a class="btn btn-light">咨询办理</a>
+					<a class="btn btn-light" href="http://www.css88.com/book/css/values/length/vh.htm">咨询办理</a>
 				</div>
 				<span class="tag">限时免费</span>
 			</div>
@@ -174,7 +151,7 @@
 				</div>
 			</div>
 			<div class="btn-wrapper">
-				<a class="btn btn-outline">功能详情</a>
+				<a class="btn btn-outline active">功能详情</a>
 			</div>
 		</section>
 		<section class="contact block">
@@ -183,7 +160,7 @@
 				<i class="icon">&#xe637;</i>
 				<h4>售前热线</h4>
 				<div class="btn-wrapper">
-					<a class="btn btn-outline">400-699-0555</a>
+					<a class="btn btn-outline" href="http://www.baidu.com">400-699-0555</a>
 				</div>
 			</div>
 			<div class="item">
@@ -201,42 +178,6 @@
 				</div>
 			</div>
 		</section>
-		<footer>
-			<div class="item">
-				<p class="title">业务</p>
-				<p><a>了解400</a></p>
-				<p><a>套餐介绍</a></p>
-			</div>
-			<div class="item">
-				<p class="title">公司</p>
-				<p><a>关于我们</a></p>
-				<p><a>客户案例</a></p>
-			</div>
-			<div class="item">
-				<p class="title">帮助</p>
-				<p><a>帮助中心</a></p>
-				<p><a>其他咨询</a></p>
-			</div>
-			<div class="item full">
-				<p class="title">友链</p>
-				<p class="list"><a>郑州400</a><a>郑州400</a><a>郑州400</a><a>郑州400</a><a>郑州400</a><a>郑州400</a></p>
-			</div>
-			<div class="item full copyright">
-				<p>大府信息 版权所有 严禁复制 2000-2016        
-				<p>上海市长宁区茅台路1068号天祥大厦501-507</p>  
-				<p>备案号：沪IC备11032290-3</p>
-			</div>
-		</footer>
-		<div class="toolbar fn-clear">
-			<a class="service">
-				<i class="icon">&#xe644;</i>
-				客服
-			</a>
-			<a class="consult">
-				<i class="icon">&#xe64c;</i>
-				咨询业务
-			</a>
-		</div>
 	</div>
 </template>
 
@@ -254,7 +195,6 @@
 		},
 		mounted() {
 			console.log(12312);
-			require('../../static/js/main.js')
 		},
 		methods: {
 

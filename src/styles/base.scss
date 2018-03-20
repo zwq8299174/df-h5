@@ -1,17 +1,4 @@
 
-$color-primary   : #ff8240;
-
-
-
-$font-size       :24px;
-$font-color      :#666;
-
-
-
-
-.color-primary{color: $color-primary;}
-.bold{font-weight:bold;}
-
 
 
 
@@ -24,6 +11,11 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-overflow-scrolling: touch;
 	background-color: #f5f7f8;
+	padding: 
+        constant(safe-area-inset-top) 
+        constant(safe-area-inset-right) 
+        constant(safe-area-inset-bottom) 
+        constant(safe-area-inset-left);  
 }
 
 
@@ -287,56 +279,6 @@ body .fn-hide {
 	display: none;
 }
 
-.fn-hide {
-	display: none;
-}
-
-.fn-show {
-	display: block !important;
-}
-
-
-/* 设置内联, 减少浮动带来的bug */
-
-.fn-left {
-	float: left;
-}
-
-.fn-right {
-	float: right;
-}
-
-
-/* 单行文字溢出时出现省略号，需设定宽度 */
-
-.fn-text-overflow {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-
-/* 人民币符号 */
-
-.fn-rmb {
-	font-family: arial;
-	font-style: normal;
-	padding-right: 4px;
-}
-
-
-/* chrome 下字体过小的问题 */
-
-.fn-webkit-adjust {
-	-webkit-text-size-adjust: none;
-}
-
-
-/*----7*--2015.11.20-update----*/
-
-.fn-overflow {
-	overflow: hidden;
-}
 
 
 /* a链接去掉点击时候的虚线*/
@@ -442,113 +384,9 @@ a {
 }
 
 
-/*----------------icon-font-----------------*/
-
-@font-face {
-	font-family: 'iconfont';  /* project id 590429 */
-  src: url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.eot');
-  src: url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_590429_7zc7g5ncifsthuxr.svg#iconfont') format('svg');
-}
-
-[class^='icon-'],
-[class*=' icon-'],
-.iconfont,
-.icon {
-	font-family: 'iconfont' !important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-stroke-width: 0.2px;
-}
 
 
 /*------often-used-------*/
-
-.w-100 {
-	width: 100%;
-}
-
-.fn-text-left {
-	text-align: left;
-}
-
-.fn-text-center {
-	text-align: center;
-}
-
-.fn-text-right {
-	text-align: right;
-}
-
-.fn-block {
-	display: block;
-}
-
-.red {
-	color: #bd0505;
-}
-
-.gray {
-	background-color: #f6f6f6;
-}
-
-.ml10 {
-	margin-left: 10px;
-}
-
-.mr20 {
-	margin-right: 20px;
-}
-
-.mr14 {
-	margin-right: 14px;
-}
-
-.fn-blur {
-	-webkit-filter: blur(5px);
-	filter: blur(5px);
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	-ms-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-}
-
-.fn-fade-up {
-	-webkit-transform: translate3d(0, 50px, 0);
-	transform: translateY(50px);
-	opacity: 0;
-}
-
-.fn-fade-up.show {
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translateY(0);
-	opacity: 1;
-	-webkit-transition-property: all;
-	-webkit-transition-duration: 0.5s;
-	-webkit-transition-timing-function: cubic-bezier(.25, .1, .25, 1);
-	transition-property: all;
-	transition-duration: 0.5s;
-	transition-timing-function: cubic-bezier(.25, .1, .25, 1);
-}
-
-.fn-delay-04 {
-	-webkit-transition-delay: 0.4s;
-	transition-delay: 0.4s;
-}
-
-.fn-delay-55 {
-	-webkit-transition-delay: 0.55s;
-	transition-delay: 0.55s;
-}
 
 body.gray {
 	background-color: #f6f6f6;
@@ -577,29 +415,7 @@ body.overflow {
 	right: 0;
 }
 
-.radius-5 {
-	border-radius: 5px;
-}
 
-.show-round {
-	border-radius: 50%;
-}
-
-.ml-20 {
-	margin-left: 20px;
-}
-
-.transition-02 {
-	transition: all 0.2s ease;
-}
-
-.transition-05 {
-	transition: all 0.5s ease;
-}
-
-.transition-1 {
-	transition: all 1s ease;
-}
 
 
 /*------page-used-------*/
