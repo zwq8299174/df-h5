@@ -12,15 +12,15 @@
 
 .advantage{background-color: #fff;margin-top: 30px;display: flex;flex-wrap:wrap;padding:0 75px;justify-content: center;
     h2{color:#000;margin:10px 0;}
-    .item{
+    .item{margin-bottom:50px;
         flex-basis: 300px;display: flex;justify-content: center;flex-wrap: wrap;
         i{//0.68
             font-size:200px;line-height: 1;color:$color-primary;
         }
-        h4{width: 100%;margin-top: 30px;line-height: 46px;font-size: 28px;color:$color-primary;}
+        h4{width: 100%;margin-top: 10px;line-height: 46px;font-size: 28px;color:$color-primary;}
         p{width: 100%;line-height: 36px;font-size: 16px;}
     }
-    
+    .btn{margin:0 0 50px 0;}
 }
 
 .cooperation{background-image: url(../assets/img/earth.png); background-position: 0 200px;background-repeat: no-repeat;
@@ -39,16 +39,16 @@
 
 
 
-.combo{
+.combo{padding-bottom: 50px;
     h2{margin: 10px 0;}
     &-wrapper{
-        padding:20px 30px 0 30px;position: relative;display: flex; justify-content: space-between;
-        .combo-card{position: relative;overflow: hidden;
-            width: 240px;border-radius: 10px;border: 2px solid $color-primary;
-            .card-header{line-height: 56px;width: 100%;font-size: 22px;background-color: $color-primary;color:#fff;height: 56px;}
+        position: relative;height:386px;
+        .combo-card{position: relative;overflow: hidden;border: 2px solid #ff9b66;
+            width: 240px;border-radius: 10px;@extend .transition-02;
+            .card-header{line-height: 56px;width: 100%;font-size: 22px;color:#fff;height: 56px;background-color: #ff9b66;@extend .transition-02;}
             .card-content{background-color: #fff;
                 padding:0 20px 20px 20px;display: flex; flex-wrap: wrap;justify-content: center;
-                h3{width: 100%;font-size:58px;color:$color-primary;line-height:64px;}
+                h3{width: 100%;font-size:38px;line-height:64px;}
                 .desc{font-size:14px;line-height: 24px;color:$color-primary;}
                 .countdown-wrapper{border-bottom: 1px solid #ddd;border-top: 1px solid #ddd;height:66px;width: 100%;margin: 10px 0;}
                 .intro{
@@ -57,16 +57,12 @@
                 .btn{width:200px;line-height: 30px;font-size: 14px;margin:10px 0 0 0;}
             }
             .tag{position: absolute;background-color: #fff;transform:rotate(-40deg); font-size: 16px;color:$color-primary;display: inline-block;line-height: 26px;padding:0 25px;top:15px;left:-24px; box-shadow:0 5px 10px rgba(197,99,47,0.8);}
-            &.small{border-color:#ff9b66;
-                .card-header{
-                    background-color: #ff9b66
-                }
-                transform:scale(0.9,0.9);
-            }
-            &.active{
-                position: absolute;top:20px;left:50%;margin-left: -120px;
-            }
         }
+        .swiper-slide-active .combo-card{border: 2px solid $color-primary;
+            .card-header{background-color: $color-primary;}
+            h3{color:$color-primary;}
+            .btn{background-color: $color-primary;color:#fff;}
+        } 
     } 
 }
 

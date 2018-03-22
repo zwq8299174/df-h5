@@ -10,11 +10,8 @@ const app = {
         openedSubmenuArr: [], // 要展开的菜单数组
         menuTheme: 'light', // 主题
         themeColor: '',
-        pageOpenedList: [{
-            title: '首页',
-            path: '',
-            name: 'home_index'
-        }],
+        baseUrl:'http://www.400ring.com/',
+        imgBaseUrl:'http://www.400ring.com//style/images/fimages/',
 		currentNav:'',
         currentPageName: '',
         currentPath: [

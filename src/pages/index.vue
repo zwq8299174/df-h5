@@ -1,9 +1,7 @@
 <template>
 	<div>
 		<swiper class="main-banner" :options="swiperOption">
-			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
-			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
-			<swiper-slide><img src="../assets/img/banner01.jpg"/></swiper-slide>
+			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item,true)" /></swiper-slide>
 			<div class="swiper-pagination" slot="pagination"></div>
 		</swiper>
 		<section class="hot-combo block">
@@ -23,7 +21,7 @@
 			<div class="detail">
 				<h3 class="title">剩余时间</h3>
 				<div class="countdown-wrapper">
-					
+
 				</div>
 				<h3 class="title">超值福利</h3>
 				<div class="weal-wrapper">
@@ -42,36 +40,19 @@
 				</div>
 				<h3 class="title">400电话</h3>
 				<div class="wrapper-400">
-					<a class="item-400">400-800-6107</a>
-					<a class="item-400">400-800-6107</a>
-					<a class="item-400">400-800-6107</a>
-					<a class="item-400">400-800-6107</a>
-					<a class="item-400">400-800-6107</a>
+					<a class="item-400" v-for="item in numbers" :key="item.key">{{item.number}}</a>
 					<a class="item-400 link">更多号码</a>
 				</div>
 			</div>
 		</section>
 		<section class="advantage block">
 			<h2>我们的优势</h2>
-			<div class="item">
-				<i class="icon">&#xe64a;</i>
-				<h4>10万家</h4>
-				<p>客户好评，多年品质如一</p>
-			</div>
-			<div class="item">
-				<i class="icon">&#xe646;</i>
-				<h4>一级授权资质</h4>
-				<p>移动、联通、电信一级授权</p>
-			</div>
-			<div class="item">
-				<i class="icon">&#xe64b;</i>
-				<h4>600万</h4>
-				<p>号码资源</p>
-			</div>
-			<div class="item">
-				<i class="icon">&#xe644;</i>
-				<h4>7*24小时</h4>
-				<p>售后服务</p>
+			<div class="item" v-for="item in advantage" :key="item.key">
+				<div class="img">
+					<img :src="getImgUrl(item)" />
+				</div>
+				<h4>{{item.title}}</h4>
+				<p>{{item.word}}</p>
 			</div>
 			<div class="btn-wrapper">
 				<a class="btn btn-outline">查看详情</a>
@@ -97,62 +78,26 @@
 		</section>
 		<section class="combo block">
 			<h2>400精选号码套餐</h2>
-			<div class="combo-wrapper">
-				<div class="combo-card small">
-					<div class="card-header">热销版</div>
-					<div class="card-content">
-						<h3>4</h3>
-						<p class="desc">元/月</p>
-						<div class="countdown-wrapper">
-							
+			<swiper class="combo-wrapper" :options="comboOption" ref="comboSwiper">
+				<swiper-slide v-for="combo in comboList" :key="combo.key">
+					<div class="combo-card active">
+						<div class="card-header">{{combo.title}}</div>
+						<div class="card-content">
+							<h3>{{combo.fwords}}</h3>
+							<div class="countdown-wrapper">
+
+							</div>
+							<div class="intro">
+								{{combo.twords}}
+							</div>
+							<div class="btn-wrapper">
+								<a class="btn btn-outline">立即预约赠话费</a>
+							</div>
 						</div>
-						<div class="intro">
-							折合4元每天；无任何增收费用、一次投入、长期使用；双倍话费赠送
-						</div>
-						<div class="btn-wrapper">
-							<a class="btn btn-outline">功能详情</a>
-						</div>
+						<span class="tag">限时套餐</span>
 					</div>
-					<span class="tag">限时套餐</span>
-				</div>
-				<div class="combo-card small">
-					<div class="card-header">热销版</div>
-					<div class="card-content">
-						<h3>4</h3>
-						<p class="desc">元/月</p>
-						<div class="countdown-wrapper">
-							
-						</div>
-						<div class="intro">
-							折合4元每天；无任何增收费用、一次投入、长期使用；双倍话费赠送
-						</div>
-						<div class="btn-wrapper">
-							<a class="btn btn-outline">功能详情</a>
-						</div>
-					</div>
-					<span class="tag">限时套餐</span>
-				</div>
-				<div class="combo-card active">
-					<div class="card-header">热销版</div>
-					<div class="card-content">
-						<h3>4</h3>
-						<p class="desc">元/月</p>
-						<div class="countdown-wrapper">
-							
-						</div>
-						<div class="intro">
-							折合4元每天；无任何增收费用、一次投入、长期使用；双倍话费赠送
-						</div>
-						<div class="btn-wrapper">
-							<a class="btn btn-primary">功能详情</a>
-						</div>
-					</div>
-					<span class="tag">限时套餐</span>
-				</div>
-			</div>
-			<div class="btn-wrapper">
-				<a class="btn btn-outline active">功能详情</a>
-			</div>
+				</swiper-slide>
+			</swiper>
 		</section>
 		<section class="contact block">
 			<h2>联系我们</h2>
@@ -186,18 +131,72 @@
 		name: 'indexPage',
 		data() {
 			return {
+				imgBaseUrl: this.$store.state.app.imgBaseUrl,
+				page: 'index',
+				bannerList: [],
+				comboList: [],
+				advantage: [],
+				numbers: [],
 				swiperOption: {
 					pagination: {
 						el: '.swiper-pagination'
 					}
+				},
+				comboOption: {
+					effect: 'coverflow',
+					slidesPerView: 3,
+					centeredSlides: true,
+					coverflowEffect: {
+						rotate: 30,
+						stretch: 10,
+						depth: 60,
+						modifier: 2
+					}
 				}
 			}
 		},
-		mounted() {
-			console.log(12312);
+		created() {
+			this.getPackage();
+			this.getData();
+		},
+		computed: {
+			swiper() {
+				return this.$refs.comboSwiper.swiper
+			}
 		},
 		methods: {
-
+			getData() {
+				this.API_getImgs({
+					page: this.page,
+					type: '1'
+				}, (d) => {
+					console.log(d);
+					this.bannerList = d;
+				});
+				this.API_getImgs({
+					page: this.page,
+					type: '2'
+				}, (d) => {
+					console.log(d);
+					this.advantage = d;
+				});
+				this.API_getNumbers({
+					page: this.page
+				}, (d) => {
+					console.log(d);
+					this.numbers = d;
+				});
+			},
+			getPackage() {
+				this.API_getPackage({
+					page: this.page,
+					type: '1'
+				}, (d) => {
+					console.log(d);
+					this.comboList = d;
+					this.swiper.slideTo(1, 1000, false);
+				});
+			}
 		}
 	}
 </script>

@@ -5,7 +5,7 @@ import {router} from './router/index';
 import store from './store';
 import ajax from './libs/ajax';
 import appApi from './libs/appApi';
-
+import filter from './libs/filter';
 
 import './styles/app.scss'
 import 'swiper/dist/css/swiper.css'
@@ -16,6 +16,7 @@ Vue.config.productionTip = false
 
 Vue.mixin(ajax);
 Vue.mixin(appApi);
+Vue.mixin(filter);
 
 new Vue({
 	el: '#app',
