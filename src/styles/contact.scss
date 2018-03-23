@@ -11,13 +11,13 @@ h1.title{text-align: center;line-height: 160px;color: #333;font-size: 48px;}
 
 .advantage{background-color: #fff;margin-top: 30px;display: flex;flex-wrap:wrap;justify-content: center;padding:20px;
     h2{margin:10px 0;font-size: 48px;color: #464646;line-height: 130px;width: 100%;}
-    .item{
+    .item{margin-bottom:50px;
         flex-basis: 100%;display: flex;justify-content: center;flex-wrap: wrap;
         i{//0.68
             font-size:200px;line-height: 1;color:$color-primary;
         }
-        h4{width: 100%;line-height: 48px;font-size: 28px;color:$color-primary;}
-        p{width: 100%;line-height: 38px;font-size: 18px;}
+        h4{width: 100%;margin-top: 10px;line-height: 46px;font-size: 28px;color:$color-primary;}
+        p{width: 100%;line-height: 36px;font-size: 16px;}
     }
 }
 

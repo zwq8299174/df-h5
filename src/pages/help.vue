@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<section class="banner">
-			<img src="../assets/img/help-banner.jpg"/>
-		</section>
+		<swiper class="banner">
+			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item,true)" /></swiper-slide>
+		</swiper>
 		<section class="flow">
 			<h2 class="title">办理流程</h2>
 			<div class="item">
@@ -48,15 +48,38 @@
 		name: 'helpPage',
 		data() {
 			return {
-				
+				page:'help',
+				bannerList:[],
+				advantage:[],
+				contact:[]
 			}
 		},
-		mounted() {
-			console.log(12312);
-			
+		created() {
+			this.getData();
 		},
 		methods: {
-
+			getData() {
+				this.API_getImgs({
+					page: this.page,
+					type: '1'
+				}, (d) => {
+					this.bannerList = d;
+				});
+				this.API_getImgs({
+					page: this.page,
+					type: '2'
+				}, (d) => {
+					console.log(d);
+//					this.advantage = d;
+				});
+				this.API_getImgs({
+					page: this.page,
+					type: '3'
+				}, (d) => {
+					console.log(d);
+//					this.contact = d;
+				});
+			}
 		}
 	}
 </script>

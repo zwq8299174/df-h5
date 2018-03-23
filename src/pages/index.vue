@@ -101,25 +101,13 @@
 		</section>
 		<section class="contact block">
 			<h2>联系我们</h2>
-			<div class="item">
-				<i class="icon">&#xe637;</i>
-				<h4>售前热线</h4>
-				<div class="btn-wrapper">
-					<a class="btn btn-outline" href="http://www.baidu.com">400-699-0555</a>
+			<div class="item" v-for="item in contact" :key="item.key">
+				<div class="img">
+					<img :src="getImgUrl(item)" />
 				</div>
-			</div>
-			<div class="item">
-				<i class="icon">&#xe638;</i>
-				<h4>售后热线</h4>
+				<h4>{{item.title}}</h4>
 				<div class="btn-wrapper">
-					<a class="btn btn-outline">400-698-7983</a>
-				</div>
-			</div>
-			<div class="item">
-				<i class="icon">&#xe640;</i>
-				<h4>渠道热线</h4>
-				<div class="btn-wrapper">
-					<a class="btn btn-outline">400-103-7000</a>
+					<a class="btn btn-outline">{{item.word}}</a>
 				</div>
 			</div>
 		</section>
@@ -137,6 +125,7 @@
 				comboList: [],
 				advantage: [],
 				numbers: [],
+				contact:[],
 				swiperOption: {
 					pagination: {
 						el: '.swiper-pagination'
@@ -180,9 +169,14 @@
 					console.log(d);
 					this.advantage = d;
 				});
-				this.API_getNumbers({
-					page: this.page
+				this.API_getImgs({
+					page: 'about',
+					type: '3'
 				}, (d) => {
+					console.log(d);
+					this.contact = d;
+				});
+				this.API_getNumbers((d) => {
 					console.log(d);
 					this.numbers = d;
 				});
@@ -196,6 +190,14 @@
 					this.comboList = d;
 					this.swiper.slideTo(1, 1000, false);
 				});
+//				this.API_getPackage({
+//					page: this.page,
+//					type: '2'
+//				}, (d) => {
+//					console.log(d);
+//					this.comboList = d;
+//					this.swiper.slideTo(1, 1000, false);
+//				});
 			}
 		}
 	}

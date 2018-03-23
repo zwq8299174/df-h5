@@ -17,8 +17,13 @@ export default {
 				suc(d);
 			});
 		},
-		API_getNumbers(data,suc){
-			this.get('getNumbers.php', data).then((d) => {
+		API_getNumbers(suc){
+			this.get('getNumbers.php').then((d) => {
+				suc(d);
+			});
+		},
+		API_getCodes(suc){
+			this.get('getCodes.php').then((d) => {
 				suc(d);
 			});
 		}

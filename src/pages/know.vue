@@ -1,25 +1,18 @@
 <template>
 	<div>
-		<section class="banner">
-			<img src="../assets/img/know.jpg"/>
-		</section>
+		<swiper class="banner">
+			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item,true)" /></swiper-slide>
+		</swiper>
 		<h1 class="title">400电话的功能</h1>
 		<div class="desc-list">
-			<div class="item">
-				<i class="icon">&#xe653;</i>
-				<div class="txt-wrapper">
-					<h2>语音信箱</h2>
-					<div class="txt">
-						当处于400电话全忙或不接听情况下,开通该功能.客户拨打时会听到提示如：“可在嘀声后留言”客户留言您可以随时听取.
-					</div>
+			<div class="item" v-for="item in descList" :key="item.key">
+				<div class="icon">
+					<img :src="getImgUrl(item)" />
 				</div>
-			</div>
-			<div class="item">
-				<i class="icon">&#xe653;</i>
 				<div class="txt-wrapper">
-					<h2>语音信箱</h2>
+					<h2>{{item.title}}</h2>
 					<div class="txt">
-						当处于400电话全忙或不接听情况下,开通该功能.客户拨打时会听到提示如：“可在嘀声后留言”客户留言您可以随时听取.
+						{{item.word}}
 					</div>
 				</div>
 			</div>
@@ -32,15 +25,31 @@
 		name: 'knowPage',
 		data() {
 			return {
-				
+				page:'comprehend',
+				bannerList:[],
+				descList:[]
 			}
 		},
-		mounted() {
-			console.log(12312);
-			
+		created() {
+			this.getData();
 		},
 		methods: {
-
+			getData() {
+				this.API_getImgs({
+					page: this.page,
+					type: '1'
+				}, (d) => {
+					console.log(d);
+					this.bannerList = d;
+				});
+				this.API_getImgs({
+					page: this.page,
+					type: '2'
+				}, (d) => {
+					console.log(d);
+					this.descList = d;
+				});
+			}
 		}
 	}
 </script>

@@ -17,7 +17,9 @@
 		</div>
 		<div class="item full">
 			<p class="title">友链</p>
-			<p class="list"><a>郑州400</a><a>郑州400</a><a>郑州400</a><a>郑州400</a><a>郑州400</a><a>郑州400</a></p>
+			<p class="list">
+				<a v-for="item in blogroll" :key="item.key" href="item.url">{{item.name}}</a>
+			</p>
 		</div>
 		<div class="item full copyright">
 			<p>大府信息 版权所有 严禁复制 2000-2016        
@@ -32,14 +34,20 @@
 		name: 'nav-footer',
 		data() {
 			return {
-				
+				blogroll:this.$store.state.app.blogroll?this.$store.state.app.blogroll:[]
 			}
 		},
-		mounted() {
-			
+		created() {
+			this.getData();
 		},
 		methods: {
-
+			getData(){
+				if(this.blogroll.length!=0) return;
+				this.API_getCodes((d) => {
+					this.blogroll = d;
+					this.$store.state.app.blogroll = d;
+				});
+			}
 		}
 	}
 </script>

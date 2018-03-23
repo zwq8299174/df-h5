@@ -14,33 +14,17 @@
 		</header>
 		<section class="nav-wrapper">
 			<nav class="nav-list">
-				<a class="nav-item ">首页</a>
-				<a class="nav-item">400套餐</a>
-				<a class="nav-item">客户案例</a>
-				<a class="nav-item">了解400</a>
-				<a class="nav-item active">关于我们</a>
-				<a class="nav-item">帮助中心</a>
-				<a class="nav-item">其他咨询</a>
+				<router-link v-for="item in navList" v-if="!item.hide" :key="item.key" class="nav-item" :class="{active:item.path==$route.path}" :to="item.path">{{item.title}}</router-link>
 			</nav>
 		</section>
 	</div>
 </template>
 
 <script>
+	import mainNav from '../../static/js/main';
+	
 	export default {
-		name: 'nav-header',
-		data() {
-			return {
-				
-			}
-		},
-		mounted() {
-//			alert(this.$refs.mainNav.offsetHeight);
-			require('../../static/js/main.js')
-		},
-		methods: {
-
-		}
+		mixins: [ mainNav ]
 	}
 </script>
 

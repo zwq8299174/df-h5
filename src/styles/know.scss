@@ -7,8 +7,8 @@
 h1.title{text-align: center;line-height: 170px;color: #333;font-size: 48px;}
 
 .desc-list{
-    .item{width: 100%;display: flex;padding:35px 74px;background-color: #fff;height:308px;
-        .icon{flex-basis:200px;display: flex;align-items: center;font-size: 126px;color:$color-primary;}
+    .item{width: 100%;display: flex;padding:35px 74px;background-color: #fff;
+        .icon{flex-basis:200px;display: flex;align-items: center;font-size: 126px;color:$color-primary;justify-content: center;}
         .txt-wrapper{flex-basis:402px;padding-right:50px;text-align: left;
             h2{line-height:82px;font-size:40px;color:#333;}
             .txt{line-height:36px;font-size:18px;}

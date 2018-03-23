@@ -50,6 +50,7 @@ export const appRouter = [
 		        path: '/article',
 		        name: 'article',
 		        title: '资讯详情',
+		        hide:true,
 		        component: () => import('@/pages/article.vue') 
 		    }
        ]
