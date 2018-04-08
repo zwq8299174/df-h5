@@ -40,9 +40,9 @@
 					this.bannerList = d;
 				});
 				this.API_getPageList({
-					page: 'acticle',
+					page: this.page,
 					currentPage: 1,
-					pageSize:100
+					pageSize:500
 				}, (d) => {
 					console.log(d);
 					this.articleList = d.list;

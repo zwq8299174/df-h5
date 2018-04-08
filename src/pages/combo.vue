@@ -19,9 +19,7 @@
 			</div>
 			<div class="detail">
 				<h3 class="title">剩余时间</h3>
-				<div class="countdown-wrapper">
-					
-				</div>
+				<count-down></count-down>
 				<h3 class="title">超值福利</h3>
 				<div class="weal-wrapper">
 					<div class="weal-item">
@@ -61,8 +59,12 @@
 </template>
 
 <script>
+	import countDown from '@/components/countdown.vue';
 	export default {
 		name: 'comboPage',
+		components:{
+			countDown	
+		},
 		data() {
 			return {
 				page:'package',
@@ -73,7 +75,6 @@
 			}
 		},
 		created() {
-			console.log(this.$store.state.app.appRouter);
 			this.getData();
 		},
 		methods: {

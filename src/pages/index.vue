@@ -20,9 +20,7 @@
 			</div>
 			<div class="detail">
 				<h3 class="title">剩余时间</h3>
-				<div class="countdown-wrapper">
-
-				</div>
+				<count-down></count-down>
 				<h3 class="title">超值福利</h3>
 				<div class="weal-wrapper">
 					<div class="weal-item">
@@ -84,9 +82,7 @@
 						<div class="card-header">{{combo.title}}</div>
 						<div class="card-content">
 							<h3>{{combo.fwords}}</h3>
-							<div class="countdown-wrapper">
-
-							</div>
+							<count-down class="small"></count-down>
 							<div class="intro">
 								{{combo.twords}}
 							</div>
@@ -115,8 +111,13 @@
 </template>
 
 <script>
+	import countDown from '@/components/countdown.vue';
+	
 	export default {
 		name: 'indexPage',
+		components:{
+			countDown	
+		},
 		data() {
 			return {
 				imgBaseUrl: this.$store.state.app.imgBaseUrl,

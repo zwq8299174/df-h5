@@ -1,0 +1,23 @@
+@import "./variable";
+
+.countdown-wrapper{
+    display: flex;justify-content: center;
+    .item{
+        display: flex;align-items: center;flex-basis:110px;width: 110px;justify-content: space-between;margin-right: 20px;
+        &:last-child{margin-right: 0;}
+        .num-wrapper{
+            display: flex;flex-basis:60px;height:60px;justify-content: center;align-items: center;line-height: 60px;
+            border:2px solid $color-primary; border-radius:5px;font-size:40px;font-family: arial;color: $color-primary;box-shadow: 0 0 10px rgba($color-primary,0.8);
+        }
+        
+    }
+    &.small{
+        .item{
+            flex-basis:45px;width: 45px;margin-right: 4px;
+            .num-wrapper{
+                flex-basis:30px;height:30px;line-height: 30px;font-size:18px;
+            }
+            i{font-size:12px;}
+        }
+    }
+}
