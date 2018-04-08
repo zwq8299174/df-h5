@@ -8,6 +8,8 @@ import appApi from './libs/appApi';
 import udesk from './libs/udesk';
 import filter from './libs/filter';
 
+import '../static/js/count-down.js'
+
 import './styles/app.scss'
 import 'swiper/dist/css/swiper.css'
 
