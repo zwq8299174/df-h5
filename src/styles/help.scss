@@ -10,8 +10,8 @@
     h2{margin:10px 0;font-size: 48px;color: #464646;line-height: 130px;height: 130px;width: 100%;}
     .item{
         flex-basis: 100%;display: flex;justify-content: center;flex-wrap: wrap;margin-bottom:60px;
-        i{//0.68
-            font-size:200px;line-height: 1;color:$color-primary;
+        .img{//0.68
+            width:200px;height:200px;display: flex;justify-content: center;align-items: center;
         }
         h4{width: 100%;line-height:48px;font-size: 28px;}
     }

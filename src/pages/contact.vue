@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<swiper class="banner">
-			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item,true)" /></swiper-slide>
+			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item)" /></swiper-slide>
 		</swiper>
 		<h1 class="title">关于我们</h1>
 		<div class="content">
@@ -41,7 +41,7 @@
 				</div>
 				<h4>{{item.title}}</h4>
 				<div class="btn-wrapper">
-					<a class="btn btn-outline">{{item.word}}</a>
+					<a class="btn btn-outline" :href="'tel:'+item.word">{{item.word}}</a>
 				</div>
 			</div>
 		</section>

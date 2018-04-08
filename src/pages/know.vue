@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<swiper class="banner">
-			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item,true)" /></swiper-slide>
+			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item)" /></swiper-slide>
 		</swiper>
 		<h1 class="title">400电话的功能</h1>
 		<div class="desc-list">

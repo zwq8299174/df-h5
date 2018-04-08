@@ -17,11 +17,7 @@ export default {
 						resolve(d.data.data);
 					} else {
 						if(d.data.code==-1){
-							this.$store.commit('logout', this);
-		                    this.$store.commit('clearOpenedSubmenu');
-		                    this.$router.push({
-		                        name: 'login'
-		                    });
+							alert(d.data.msg)
 						}else{
 							reject(d);
 						}

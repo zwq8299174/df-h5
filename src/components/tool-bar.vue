@@ -1,10 +1,10 @@
 <template>
 	<div class="toolbar fn-clear">
-		<a class="service">
+		<a class="service" @click="showPanel">
 			<i class="icon">&#xe644;</i>
 			客服
 		</a>
-		<a class="consult">
+		<a class="consult" @click="phone">
 			<i class="icon">&#xe64c;</i>
 			咨询业务
 		</a>
@@ -20,10 +20,12 @@
 			}
 		},
 		mounted() {
-			console.log(12312);
+			
 		},
 		methods: {
-
+			phone(){
+				window.location.href='tel:'+this.$store.state.app.numbers[0].word;
+			}
 		}
 	}
 </script>

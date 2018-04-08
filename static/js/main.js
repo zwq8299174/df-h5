@@ -24,8 +24,9 @@ export default {
 	},
 	watch: {
 		'$route' (to) {
-			console.log(to);
+			console.log(window);
 			this.close();
+			window.scrollTo(0,0);
 		}
 	},
 	mounted() {
@@ -108,7 +109,9 @@ export default {
 				this.nav.className = 'nav-wrapper show';
 			}, 0);
 			this.header.className = 'main-nav open';
-			this.toCloseIcon = !this.toCloseIcon;
+			if(this.toCloseIcon){
+				this.toCloseIcon = false;
+			}
 		},
 		close(){
 			this.outAC(this.segmentD);
@@ -122,7 +125,9 @@ export default {
 				this.nav.style.display = 'none';
 			}, 700);
 			this.header.className = 'main-nav';
-			this.toCloseIcon = !this.toCloseIcon;
+			if(!this.toCloseIcon){
+				this.toCloseIcon = true;
+			}
 		},
 		init(){
 			this.wrapper.style.visibility = 'visible';

@@ -1,19 +1,19 @@
 <template>
 	<div>
 		<swiper class="banner">
-			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item,true)" /></swiper-slide>
+			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item)" /></swiper-slide>
 		</swiper>
 		<section class="hot-combo">
 			<h2>推荐套餐</h2>
 			<div class="combo-card">
-				<h3>特推套餐</h3>
-				<p>每天不到</p>
+				<h3>{{hotCombo.title}}</h3>
+				<p>{{hotCombo.name}}</p>
 				<div class="price">
-					<i>3</i>
-					<em>元</em>
+					<i>{{hotCombo.fwords}}</i>
+					<em>{{hotCombo.swords}}</em>
 				</div>
 				<div class="btn-wrapper">
-					<a class="btn btn-light">咨询办理</a>
+					<a class="btn btn-light" @click="showPanel">咨询办理</a>
 				</div>
 				<span class="tag">限时免费</span>
 			</div>
@@ -40,7 +40,7 @@
 				<h3 class="title">400电话</h3>
 				<div class="wrapper-400">
 					<a class="item-400" v-for="item in numbers" :key="item.key">{{item.number}}</a>
-					<a class="item-400 link">更多号码</a>
+					<a class="item-400 link" @click="showPanel">更多号码</a>
 				</div>
 			</div>
 		</section>
@@ -52,7 +52,7 @@
 					<h3><i>{{item.fwords}}</i><span>{{item.swords}}</span></h3>
 					<div class="intro" v-html="item.twords"></div>
 					<div class="btn-wrapper">
-						<a class="btn btn-outline">咨询办理</a>
+						<a class="btn btn-outline" @click="showPanel">咨询办理</a>
 					</div>
 				</div>
 			</div>
@@ -68,7 +68,8 @@
 				page:'package',
 				comboList:[],
 				numbers:[],
-				bannerList:[]
+				bannerList:[],
+				hotCombo:{}
 			}
 		},
 		created() {
@@ -96,10 +97,11 @@
 				});
 				this.API_getPackage({
 					page: this.page,
-					type: '2'
+					type: '0'
 				}, (d) => {
-					console.log(d);
-					
+					if(d&&d.length>0){
+						this.hotCombo = d[0];
+					}
 				});
 			}
 		}

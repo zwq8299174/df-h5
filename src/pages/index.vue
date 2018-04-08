@@ -1,20 +1,20 @@
 <template>
 	<div>
 		<swiper class="main-banner" :options="swiperOption">
-			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item,true)" /></swiper-slide>
+			<swiper-slide v-for="item in bannerList" :key="item.key"><img :src="getImgUrl(item)" /></swiper-slide>
 			<div class="swiper-pagination" slot="pagination"></div>
 		</swiper>
 		<section class="hot-combo block">
 			<h2>推荐套餐</h2>
 			<div class="combo-card">
-				<h3>特推套餐</h3>
-				<p>每天不到</p>
+				<h3>{{hotCombo.title}}</h3>
+				<p>{{hotCombo.name}}</p>
 				<div class="price">
-					<i>3</i>
-					<em>元</em>
+					<i>{{hotCombo.fwords}}</i>
+					<em>{{hotCombo.swords}}</em>
 				</div>
 				<div class="btn-wrapper">
-					<a class="btn btn-light" href="http://www.css88.com/book/css/values/length/vh.htm">咨询办理</a>
+					<a class="btn btn-light" @click="showPanel">咨询办理</a>
 				</div>
 				<span class="tag">限时免费</span>
 			</div>
@@ -41,7 +41,7 @@
 				<h3 class="title">400电话</h3>
 				<div class="wrapper-400">
 					<a class="item-400" v-for="item in numbers" :key="item.key">{{item.number}}</a>
-					<a class="item-400 link">更多号码</a>
+					<a class="item-400 link" @click="showPanel">更多号码</a>
 				</div>
 			</div>
 		</section>
@@ -55,7 +55,7 @@
 				<p>{{item.word}}</p>
 			</div>
 			<div class="btn-wrapper">
-				<a class="btn btn-outline">查看详情</a>
+				<router-link class="btn btn-outline" to="/contact">查看详情</router-link>
 			</div>
 		</section>
 		<section class="cooperation block">
@@ -63,7 +63,7 @@
 			<h4>累计超过 <i class="color-primary bold">100万</i> 家商户使用了 <i class="color-primary bold">400电话服务</i></h4>
 			<div class="company-wrapper"></div>
 			<div class="btn-wrapper">
-				<a class="btn btn-outline">更多客户案例</a>
+				<router-link class="btn btn-outline" to="/cooperation">更多客户案例</router-link>
 			</div>
 		</section>
 		<section class="introduce block">
@@ -73,7 +73,7 @@
 			<p>附赠的语音菜单、排队等待、智能报号评价等无数功能，</p>
 			<p>致力帮助企业快速高效的搭建完整400体系以及客户管理系统.</p>
 			<div class="btn-wrapper">
-				<a class="btn btn-light">功能详情</a>
+				<router-link class="btn btn-light" to="/know">功能详情</router-link>
 			</div>
 		</section>
 		<section class="combo block">
@@ -91,7 +91,7 @@
 								{{combo.twords}}
 							</div>
 							<div class="btn-wrapper">
-								<a class="btn btn-outline">立即预约赠话费</a>
+								<a class="btn btn-outline" @click="showPanel">立即预约赠话费</a>
 							</div>
 						</div>
 						<span class="tag">限时套餐</span>
@@ -107,7 +107,7 @@
 				</div>
 				<h4>{{item.title}}</h4>
 				<div class="btn-wrapper">
-					<a class="btn btn-outline">{{item.word}}</a>
+					<a class="btn btn-outline" :href="'tel:'+item.word">{{item.word}}</a>
 				</div>
 			</div>
 		</section>
@@ -126,6 +126,7 @@
 				advantage: [],
 				numbers: [],
 				contact:[],
+				hotCombo:{},
 				swiperOption: {
 					pagination: {
 						el: '.swiper-pagination'
@@ -179,6 +180,7 @@
 				this.API_getNumbers((d) => {
 					console.log(d);
 					this.numbers = d;
+					this.$store.state.app.numbers = d;
 				});
 			},
 			getPackage() {
@@ -190,19 +192,19 @@
 					this.comboList = d;
 					this.swiper.slideTo(1, 1000, false);
 				});
-//				this.API_getPackage({
-//					page: this.page,
-//					type: '2'
-//				}, (d) => {
-//					console.log(d);
-//					this.comboList = d;
-//					this.swiper.slideTo(1, 1000, false);
-//				});
+				this.API_getPackage({
+					page: this.page,
+					type: '0'
+				}, (d) => {
+					if(d&&d.length>0){
+						this.hotCombo = d[0];
+					}
+				});
 			}
 		}
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	@import "../styles/index";
 </style>

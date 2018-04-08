@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -27,12 +28,32 @@
 				}
 			}(navigator.userAgent);
 		</script>
-		<script type="text/javascript" src="./static/js/segment.min.js" ></script>
-		<script type="text/javascript" src="./static/js/ease.min.js" ></script>
+		<script type="text/javascript" src="./static/js/segment.min.js"></script>
+		<script type="text/javascript" src="./static/js/ease.min.js"></script>
 		<title>df-h5</title>
 	</head>
+
 	<body ontouchstart="">
 		<div id="app"></div>
 		<!-- built files will be auto injected -->
+		<script>
+			(function(a, h, c, b, f, g) {
+				a["UdeskApiObject"] = f;
+				a[f] = a[f] || function() {
+					(a[f].d = a[f].d || []).push(arguments)
+				};
+				g = h.createElement(c);
+				g.async = 1;
+				g.charset = "utf-8";
+				g.src = b;
+				c = h.getElementsByTagName(c)[0];
+				c.parentNode.insertBefore(g, c)
+			})(window, document, "script", "http://assets-cli.udesk.cn/im_client/js/udeskApi.js", "ud");
+			ud({
+				"code": "258gcd2e",
+				"link": "http://dafu.udesk.cn/im_client/?web_plugin_id=41955"
+			});
+		</script>
 	</body>
+
 </html>

@@ -1,0 +1,17 @@
+@import "./variable";
+
+
+.banner{
+    height: 330px;width: 100%;
+}
+
+.article-list{padding:50px;
+    li{width: 100%;height:60px;line-height: 60px;font-size:28px;
+    border-bottom: 1px dashed #ddd;
+        a{
+            display: flex;justify-content:space-between;@extend .fn-text-overflow;
+            span{color: #2c81c3;}
+        }
+    }
+    
+}

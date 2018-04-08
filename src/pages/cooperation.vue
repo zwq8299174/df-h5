@@ -9,34 +9,16 @@
 			<p class="head">行业案例</p>
 			<div class="class-list">
 				<a class="active">全部</a>
-				<a>餐饮</a>
-				<a>餐饮</a>
-				<a>餐饮</a>
-				<a>餐饮</a>
-				<a>餐饮</a>
-				<a>餐饮</a>
-				<a>餐饮</a>
-				<a>餐饮</a>
 			</div>
 			<div class="merchant-list">
-				<div class="item">
+				<div class="item" v-for="item in merchantList">
 					<div class="img">
-						<img src="../assets/img/merchant.png"/>
+						<img :src="'../../assets/img/'+item.logo"/>
 					</div>
-					<h4>百度</h4>
-					<p>400-0**-2750</p>
+					<h4>{{item.name}}</h4>
+					<p>{{item.number}}</p>
 					<div class="btn-wrapper">
-						<a class="btn btn-outline">了解详情</a>
-					</div>
-				</div>
-				<div class="item">
-					<div class="img">
-						<img src="../assets/img/merchant.png"/>
-					</div>
-					<h4>百度</h4>
-					<p>400-0**-2750</p>
-					<div class="btn-wrapper">
-						<a class="btn btn-outline">了解详情</a>
+						<a class="btn btn-outline" @click="showPanel">了解详情</a>
 					</div>
 				</div>
 			</div>
@@ -49,7 +31,38 @@
 		name: 'cooperationPage',
 		data() {
 			return {
-				
+				merchantList:[
+					{
+						name:'太平洋保险'	,
+						namber:'400-****-2750',
+						logo:'cr01.jpg'
+					},
+					{
+						name:'百度'	,
+						namber:'400-****-8888',
+						logo:'cr02.jpg'
+					},
+					{
+						name:'华泰证券'	,
+						namber:'400-****-1616',
+						logo:'cr03.jpg'
+					},
+					{
+						name:'北汽龙威'	,
+						namber:'400-****-6218',
+						logo:'cr04.jpg'
+					},
+					{
+						name:'华为'	,
+						namber:'400-****-6888',
+						logo:'cr05.jpg'
+					},
+					{
+						name:'国家电网'	,
+						namber:'400-****-8006',
+						logo:'cr06.jpg'
+					}
+				]
 			}
 		},
 		mounted() {

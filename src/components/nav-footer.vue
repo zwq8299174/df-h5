@@ -2,18 +2,18 @@
 	<footer>
 		<div class="item">
 			<p class="title">业务</p>
-			<p><a>了解400</a></p>
-			<p><a>套餐介绍</a></p>
+			<p><router-link to="/know">了解400</router-link></p>
+			<p><router-link to="/combo">套餐介绍</router-link></p>
 		</div>
 		<div class="item">
 			<p class="title">公司</p>
-			<p><a>关于我们</a></p>
-			<p><a>客户案例</a></p>
+			<p><router-link to="/contact">关于我们</router-link></p>
+			<p><router-link to="/cooperation">客户案例</router-link></p>
 		</div>
 		<div class="item">
 			<p class="title">帮助</p>
-			<p><a>帮助中心</a></p>
-			<p><a>其他咨询</a></p>
+			<p><router-link to="/help">帮助中心</router-link></p>
+			<p><router-link to="/article-list">其他资讯</router-link></p>
 		</div>
 		<div class="item full">
 			<p class="title">友链</p>

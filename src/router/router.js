@@ -47,7 +47,13 @@ export const appRouter = [
 		        component: () => import('@/pages/help.vue') 
 		    },
 		    {
-		        path: '/article',
+		        path: '/article-list',
+		        name: 'article-list',
+		        title: '资讯列表',
+		        component: () => import('@/pages/article-list.vue') 
+		    },
+		    {
+		        path: '/article/:article_id',
 		        name: 'article',
 		        title: '资讯详情',
 		        hide:true,

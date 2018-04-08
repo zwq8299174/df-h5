@@ -5,10 +5,12 @@ import {router} from './router/index';
 import store from './store';
 import ajax from './libs/ajax';
 import appApi from './libs/appApi';
+import udesk from './libs/udesk';
 import filter from './libs/filter';
 
 import './styles/app.scss'
 import 'swiper/dist/css/swiper.css'
+
 
 Vue.use(VueAwesomeSwiper);
 	
@@ -16,6 +18,7 @@ Vue.config.productionTip = false
 
 Vue.mixin(ajax);
 Vue.mixin(appApi);
+Vue.mixin(udesk);
 Vue.mixin(filter);
 
 new Vue({
